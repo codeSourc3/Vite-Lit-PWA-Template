@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "deploy:gh": "vite build --base=/Vite-Lit-PWA-Template/",
+    "deploy:gh": "vite build --base=/Vite-Lit-PWA-Template",
     "preview": "vite preview"
   },
   "devDependencies": {
