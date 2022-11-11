@@ -1,7 +1,21 @@
 /// <reference types="vite/client" />
+import { registerSW } from 'virtual:pwa-register'
 import './style.css'
 import javascriptLogo from './javascript.svg'
 import { setupCounter } from './counter.js'
+
+const updateSW = registerSW({
+  onNeedRefresh() {
+    const confirmation = confirm('New content available. Reload?');
+    if (confirmation) {
+      updateSW(confirmation);
+    }
+  },
+  onOfflineReady() {
+    alert('Ready to work offline!');
+  }
+});
+
 
 document.querySelector('#app').innerHTML = `
   <div>
